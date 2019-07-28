@@ -30,31 +30,29 @@ public class BookController {
 
     public void removeBook(String bookID){
         bookService.removeBook(bookID);
-
     }
 
-
     public List<Book> getAllBooks(){
-
+        return bookService.getAllBooks();
     }
 
     public Book findByTitle(String title){
-
+        return bookService.findByTitle(title);
     }
 
     public Book findByTitleAndAuthor(String title, String author){
-
+        return bookService.findByTitleAndAuthor(title, author);
     }
 
     public Book findByTitleAndAuthorAndYear(String title, String author, Integer year){
-
+        return bookService.findByTitleAndAuthorAndYear(title, author, year);
     }
 
     public Book findByID(String bookID){
-
+        return bookService.findByID(bookID);
     }
 
     public boolean lentAbook(Book book, String whoLendBook){
-
+        return bookService.lentAbook(book, whoLendBook);
     }
 }

@@ -15,9 +15,6 @@ import java.util.List;
 public class BookService {
     public BookRepository  bookRepository = createBookRepository();
 
-//    public BookService(BookRepository bookRepository) {
-//        this.bookRepository = new BookRepository();
-//    }
 
     public  BookRepository createBookRepository() {
         return BookRepositorySingleton.getInstance();
@@ -34,26 +31,26 @@ public class BookService {
 
 
     public List<Book> getAllBooks(){
-
+        return bookRepository.getAllBooks();
     }
 
     public Book findByTitle(String title){
-
+        return bookRepository.findByTitle(title);
     }
 
     public Book findByTitleAndAuthor(String title, String author){
-
+        return bookRepository.findByTitleAndAuthor(title, author);
     }
 
     public Book findByTitleAndAuthorAndYear(String title, String author, Integer year){
-
+        return bookRepository.findByTitleAndAuthorAndYear(title, author, year);
     }
 
     public Book findByID(String bookID){
-
+        return bookRepository.findByID(bookID);
     }
 
     public boolean lentAbook(Book book, String whoLendBook){
-
+        return bookRepository.lentAbook(book,whoLendBook);
     }
 }
