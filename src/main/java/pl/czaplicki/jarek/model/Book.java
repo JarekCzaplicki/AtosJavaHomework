@@ -1,4 +1,7 @@
 package pl.czaplicki.jarek.model;
+
+import java.util.Objects;
+
 /**
  * @author jarekczaplicki@tlen.pl
  *
@@ -8,14 +11,22 @@ package pl.czaplicki.jarek.model;
 public class Book {
 
     private String title, author, whoLendBook, bookID;
-    private int year;
+    private Integer year;
     private boolean available = false;
 
     public Book() {
     }
 
+    public Book(String title, String author, String whoLendBook, Integer year, boolean available) {
+        this.title = title;
+        this.author = author;
+        this.whoLendBook = whoLendBook;
+        this.year = year;
+        this.available = available;
+    }
+
     public Book(String title, String author, String whoLendBook,
-                String bookID, int year, boolean available) {
+                String bookID, Integer year, boolean available) {
         this.title = title;
         this.author = author;
         this.whoLendBook = whoLendBook;
@@ -56,11 +67,11 @@ public class Book {
         this.whoLendBook = whoLendBook;
     }
 
-    public int getYear() {
+    public Integer getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(Integer year) {
         this.year = year;
     }
 
@@ -82,5 +93,23 @@ public class Book {
                 ", year=" + year +
                 ", available=" + available +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return isAvailable() == book.isAvailable() &&
+                Objects.equals(getTitle(), book.getTitle()) &&
+                Objects.equals(getAuthor(), book.getAuthor()) &&
+                Objects.equals(getWhoLendBook(), book.getWhoLendBook()) &&
+                Objects.equals(getBookID(), book.getBookID()) &&
+                Objects.equals(getYear(), book.getYear());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getTitle(), getAuthor(), getWhoLendBook(), getBookID(), getYear(), isAvailable());
     }
 }
