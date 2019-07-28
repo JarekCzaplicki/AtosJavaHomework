@@ -4,7 +4,7 @@
 
 Project created for job interview.
 
-[![Generic badge](https://img.shields.io/badge/Version-0.1.1-green.svg)](https://www.ephrine.in/)
+[![Generic badge](https://img.shields.io/badge/Version-0.1.2-green.svg)](https://www.ephrine.in/)
 
 
 

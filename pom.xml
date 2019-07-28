@@ -6,7 +6,7 @@
 
     <groupId>pl.czaplicki.jarek</groupId>
     <artifactId>AtosJavaHomework</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <build>
         <plugins>
             <plugin>

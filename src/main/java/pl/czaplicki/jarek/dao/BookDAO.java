@@ -18,4 +18,5 @@ public interface BookDAO {
     Book findByTitleAndAuthor(String title, String author);
     Book findByTitleAndAuthorAndYear(String title, String author, Integer year);
     Book findByID(String bookID);
+    boolean lentAbook(Book book, String whoLendBook);
 }

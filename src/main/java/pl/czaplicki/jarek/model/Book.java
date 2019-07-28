@@ -10,9 +10,10 @@ import java.util.Objects;
  */
 public class Book {
 
-    private String title, author, whoLendBook, bookID;
+    private String title, author, bookID;
+    private String whoLendBook = "";
     private Integer year;
-    private boolean available = false;
+    private boolean available = true;
 
     public Book() {
     }
@@ -23,6 +24,12 @@ public class Book {
         this.whoLendBook = whoLendBook;
         this.year = year;
         this.available = available;
+    }
+
+    public Book(String title, String author, Integer year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
     }
 
     public Book(String title, String author, String whoLendBook,

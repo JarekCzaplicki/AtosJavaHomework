@@ -70,4 +70,15 @@ public class BookRepository implements BookDAO {
         }
         return null;
     }
+
+    @Override
+    public boolean lentAbook(Book book, String whoLendBook) {
+        for (Book b : listOfBooks) {
+            if (b.getBookID().equals(book.getBookID())) {
+                b.setWhoLendBook(whoLendBook);
+                b.setAvailable(false);
+            }
+        }
+        return false;
+    }
 }
