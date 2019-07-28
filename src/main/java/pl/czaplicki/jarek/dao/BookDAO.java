@@ -14,9 +14,8 @@ public interface BookDAO {
     Book addNewBook(Book newBook);
     void removeBook(String bookID);
     List<Book> getAllBooks();
-    Book findFirstByTitle(String title);
-
-    Book findFirstByTitleAndAuthor(String title, String author);
-
-    Book findFirstById(String bookID);
+    Book findByTitle(String title);
+    Book findByTitleAndAuthor(String title, String author);
+    Book findByTitleAndAuthorAndYear(String title, String author, Integer year);
+    Book findByID(String bookID);
 }
