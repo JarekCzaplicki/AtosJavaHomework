@@ -10,7 +10,7 @@ import java.util.Objects;
  */
 public class Book {
 
-    private String title, author, bookID;
+    private String title, author;
     private String whoLendBook = "";
     private Integer year;
     private boolean available = true;
@@ -18,36 +18,10 @@ public class Book {
     public Book() {
     }
 
-    public Book(String title, String author, String whoLendBook, Integer year, boolean available) {
-        this.title = title;
-        this.author = author;
-        this.whoLendBook = whoLendBook;
-        this.year = year;
-        this.available = available;
-    }
-
     public Book(String title, String author, Integer year) {
         this.title = title;
         this.author = author;
         this.year = year;
-    }
-
-    public Book(String title, String author, String whoLendBook,
-                String bookID, Integer year, boolean available) {
-        this.title = title;
-        this.author = author;
-        this.whoLendBook = whoLendBook;
-        this.bookID = bookID;
-        this.year = year;
-        this.available = available;
-    }
-
-    public String getBookID() {
-        return bookID;
-    }
-
-    public void setBookID(String bookID) {
-        this.bookID = bookID;
     }
 
     public String getTitle() {
@@ -88,35 +62,5 @@ public class Book {
 
     public void setAvailable(boolean available) {
         this.available = available;
-    }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", whoLendBook='" + whoLendBook + '\'' +
-                ", bookID='" + bookID + '\'' +
-                ", year=" + year +
-                ", available=" + available +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Book book = (Book) o;
-        return isAvailable() == book.isAvailable() &&
-                Objects.equals(getTitle(), book.getTitle()) &&
-                Objects.equals(getAuthor(), book.getAuthor()) &&
-                Objects.equals(getWhoLendBook(), book.getWhoLendBook()) &&
-                Objects.equals(getBookID(), book.getBookID()) &&
-                Objects.equals(getYear(), book.getYear());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getTitle(), getAuthor(), getWhoLendBook(), getBookID(), getYear(), isAvailable());
     }
 }

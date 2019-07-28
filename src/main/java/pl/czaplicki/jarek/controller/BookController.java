@@ -4,7 +4,7 @@ import pl.czaplicki.jarek.model.Book;
 import pl.czaplicki.jarek.repository.BookRepository;
 import pl.czaplicki.jarek.service.BookService;
 
-import java.util.List;
+import java.util.Map;
 
 /**
  * @author jarekczaplicki@tlen.pl
@@ -16,9 +16,11 @@ public class BookController {
 //    W testach odwołuję się bezpośrednio i tylko do metod z tej klasy
     private BookService bookService;
 
-    public BookController(BookService bookService) {
+    public BookController() {
         this.bookService = new BookService();
     }
+
+
 
     public BookRepository createBookRepository(){
         return bookService.createBookRepository();
@@ -28,12 +30,16 @@ public class BookController {
         return bookService.addNewBook(newBook);
     }
 
-    public void removeBook(String bookID){
+    public void removeBook(Long bookID){
         bookService.removeBook(bookID);
     }
 
-    public List<Book> getAllBooks(){
+    public Map<Long, Book> getAllBooks(){
         return bookService.getAllBooks();
+    }
+
+    public String printAllBooks(){
+        return bookService.printAllBooks();
     }
 
     public Book findByTitle(String title){
@@ -48,11 +54,11 @@ public class BookController {
         return bookService.findByTitleAndAuthorAndYear(title, author, year);
     }
 
-    public Book findByID(String bookID){
+    public Book findByID(Long bookID){
         return bookService.findByID(bookID);
     }
 
-    public boolean lentAbook(Book book, String whoLendBook){
-        return bookService.lentAbook(book, whoLendBook);
+    public boolean lentAbook(Long bookID, String whoLendBook){
+        return bookService.lentAbook(bookID, whoLendBook);
     }
 }

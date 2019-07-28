@@ -3,6 +3,7 @@ package pl.czaplicki.jarek.dao;
 import pl.czaplicki.jarek.model.Book;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author jarekczaplicki@tlen.pl
@@ -12,11 +13,11 @@ import java.util.List;
 
 public interface BookDAO {
     Book addNewBook(Book newBook);
-    void removeBook(String bookID);
-    List<Book> getAllBooks();
+    void removeBook(Long bookID);
+    Map<Long, Book> getAllBooks();
     Book findByTitle(String title);
     Book findByTitleAndAuthor(String title, String author);
     Book findByTitleAndAuthorAndYear(String title, String author, Integer year);
-    Book findByID(String bookID);
-    boolean lentAbook(Book book, String whoLendBook);
+    Book findByID(Long bookID);
+    boolean lentAbook(Long bookID, String whoLendBook);
 }
