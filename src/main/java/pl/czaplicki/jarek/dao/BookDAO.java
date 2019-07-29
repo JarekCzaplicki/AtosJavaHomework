@@ -2,7 +2,6 @@ package pl.czaplicki.jarek.dao;
 
 import pl.czaplicki.jarek.model.Book;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -19,5 +18,5 @@ public interface BookDAO {
     Book findByTitleAndAuthor(String title, String author);
     Book findByTitleAndAuthorAndYear(String title, String author, Integer year);
     Book findByID(Long bookID);
-    boolean lentAbook(Long bookID, String whoLendBook);
+    boolean lendBook(Long bookID, String whoLendBook);
 }

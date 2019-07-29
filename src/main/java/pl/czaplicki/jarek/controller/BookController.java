@@ -1,7 +1,6 @@
 package pl.czaplicki.jarek.controller;
 
 import pl.czaplicki.jarek.model.Book;
-import pl.czaplicki.jarek.repository.BookRepository;
 import pl.czaplicki.jarek.service.BookService;
 
 import java.util.Map;
@@ -20,18 +19,12 @@ public class BookController {
         this.bookService = new BookService();
     }
 
-
-
-    public BookRepository createBookRepository(){
-        return bookService.createBookRepository();
-    }
-
     public Book addNewBook(Book newBook){
         return bookService.addNewBook(newBook);
     }
 
-    public void removeBook(Long bookID){
-        bookService.removeBook(bookID);
+    public int removeBook(Long bookID){
+       return bookService.removeBook(bookID);
     }
 
     public Map<Long, Book> getAllBooks(){
@@ -58,7 +51,7 @@ public class BookController {
         return bookService.findByID(bookID);
     }
 
-    public boolean lentAbook(Long bookID, String whoLendBook){
-        return bookService.lentAbook(bookID, whoLendBook);
+    public boolean lentBook(Long bookID, String whoLendBook){
+        return bookService.lendBook(bookID, whoLendBook);
     }
 }

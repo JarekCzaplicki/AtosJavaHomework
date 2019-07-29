@@ -75,7 +75,7 @@ public class BookRepository implements BookDAO {
     }
 
     @Override
-    public boolean lentAbook(Long bookID, String whoLendBook) {
+    public boolean lendBook(Long bookID, String whoLendBook) {
         for (Map.Entry<Long, Book> entry : libary.entrySet()) {
             Long id = entry.getKey();
             Book book = entry.getValue();
