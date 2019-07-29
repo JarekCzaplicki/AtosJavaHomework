@@ -40,7 +40,6 @@ public class BookRepository implements BookDAO {
     @Override
     public Book findByTitle(String title) {
         for (Book book : libary.values()) {
-//            return (Book) listOfBooks.stream().filter((p) -> p.getTitle().equals(title));
             if (book.getTitle().equals(title))
                 return book;
         }

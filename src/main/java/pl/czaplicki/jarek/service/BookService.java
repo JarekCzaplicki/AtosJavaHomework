@@ -10,8 +10,7 @@ import java.util.Map;
  *
  * This class represents business logic
  */
-// Oprogramować warunki i błędy podczas wywoływania metod z BookReposytory, Zwracać gotowe obiekty
-//    lub błędy
+
 public class BookService {
     public BookRepository  bookRepository = createBookRepository();
 
