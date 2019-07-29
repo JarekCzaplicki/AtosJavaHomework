@@ -1,5 +1,6 @@
 package pl.czaplicki.jarek.controller;
 
+import org.junit.jupiter.api.Test;
 import pl.czaplicki.jarek.model.Book;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -7,7 +8,7 @@ class BookControllerTest {
 
   BookController con = new BookController();
 
-  @org.junit.jupiter.api.Test
+  @Test
   void addNewBook() {
     assertTrue(con.addNewBook(new Book("Pan i Pani", "Franek", 2019)) != null);
     assertTrue(con.addNewBook(new Book("Abra kadabra", "Wiedzma", 1219))!= null);
@@ -19,27 +20,27 @@ class BookControllerTest {
     assertTrue(con.addNewBook(new Book("How to avoid traps", "Mouse", 2000))!= null);
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   void lentBook() {
   assertTrue(con.lentBook(4L, "Tester"));
   assertFalse(con.lentBook(4L, "Tester II"));
   assertFalse(con.lentBook(999L, "Tester II"));
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   void removeBook() {
   assertTrue((con.removeBook(1L)) == 0);
   assertTrue((con.removeBook(2L)) == 0);
   assertTrue((con.removeBook(3L)) == 0);
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   void getAllBooks() {
   addNewBook();
     assertTrue(con.getAllBooks() != null);
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   void findByTitle() {
     assertTrue(con.findByTitle("Pan i Pani") != null);
     assertTrue(con.findByTitle("Abra kadabra")!= null);
@@ -51,7 +52,7 @@ class BookControllerTest {
     assertTrue(con.findByTitle("How to avoid traps")!= null);
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   void findByTitleAndAuthor() {
     assertTrue(con.findByTitleAndAuthor("Pan i Pani", "Franek") != null);
     assertTrue(con.findByTitleAndAuthor("Abra kadabra", "Wiedzma")!= null);
@@ -63,7 +64,7 @@ class BookControllerTest {
     assertTrue(con.findByTitleAndAuthor("How to avoid traps", "Mouse")!= null);
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   void findByTitleAndAuthorAndYear() {
     assertTrue(con.addNewBook(new Book("Pan i Pani", "Franek", 2019)) != null);
     assertTrue(con.addNewBook(new Book("Abra kadabra", "Wiedzma", 1219))!= null);
@@ -75,7 +76,7 @@ class BookControllerTest {
     assertTrue(con.addNewBook(new Book("How to avoid traps", "Mouse", 2000))!= null);
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   void findByID() {
     assertFalse(con.findByID(1L) != null);
     assertTrue(con.findByID(800L) == null);
