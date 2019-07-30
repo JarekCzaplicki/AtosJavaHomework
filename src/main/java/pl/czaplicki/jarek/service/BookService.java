@@ -134,12 +134,12 @@ public class BookService {
     public boolean lendBook(Long bookID, String whoLendBook){
         if (bookRepository.findByID(bookID) != null){
             if (bookRepository.findByID(bookID).isAvailable()){
-                System.out.println("The book " + bookRepository.findByID(bookID).getTitle() + " was lent to Mr." + whoLendBook);
+                System.out.println("The book \"" + bookRepository.findByID(bookID).getTitle() + "\" was lent to Mr." + whoLendBook);
                 bookRepository.lendBook(bookID,whoLendBook);
                 return true;
             }else{
-                System.out.println("The book " + bookRepository.findByID(bookID).getTitle()
-                + " is not available it was lent to Mr." + bookRepository.findByID(bookID).getWhoLendBook());
+                System.out.println("The book \"" + bookRepository.findByID(bookID).getTitle()
+                + "\" is not available it was lent to Mr." + bookRepository.findByID(bookID).getWhoLendBook());
                 return false;
             }
         }else {

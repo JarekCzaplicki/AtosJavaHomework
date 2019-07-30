@@ -12,7 +12,7 @@ import java.util.*;
  */
 public class BookRepository implements BookDAO {
     Map<Long, Book> libary = new HashMap<>();
-    Long bookID = 0000L;
+    Long bookID = 0L;
 
     // 5. Should be possible to add new book to the library. ID should not be passed as argument. ID should be generated inside Library.
     public Book addNewBook(Book book) {
