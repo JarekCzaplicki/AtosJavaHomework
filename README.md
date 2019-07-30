@@ -57,4 +57,5 @@ See the [CONTRIBUTING.md](https://gist.github.com/JarekCzaplicki/acd848debd19820
 
 
 
+have a nice day :)
 
