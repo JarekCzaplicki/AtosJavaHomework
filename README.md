@@ -31,7 +31,7 @@ Testing
 
 ## Running application
 
-This application just presents solution of the recruitment task and it can be run itself. It doesn't have main() method.
+This application just presents solution of the recruitment task and it cant be run itself. It doesn't have main() method.
 
 ## Running the tests
 
